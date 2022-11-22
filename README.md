@@ -29,6 +29,7 @@ Role name: lambda-dynamodb-role.
 
 4. Create a lambda function ProcessDynamoDBRecords and assign the new role.
 aws lambda create-function --function-name ProcessDynamoDBRecords --zip-file fileb://function.zip --handler index.handler --runtime nodejs16.x --role arn:aws:iam::935207697442:role/lambda-dynamodb-role
+Note - Add all the permissions related to dynamodb
 
 5. Enable stream in the dynamodb table, choose last option
 
