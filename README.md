@@ -34,3 +34,8 @@ aws lambda create-function --function-name ProcessDynamoDBRecords --zip-file fil
 
 6. Enable even source mapping
 aws lambda create-event-source-mapping --function-name ProcessDynamoDBRecords --batch-size 100 --starting-position LATEST --event-source arn:aws:dynamodb:ap-southeast-2:935207697442:table/trn-table-dev/stream/2022-11-22T01:00:15.721
+
+6. To update a lambda function
+Update the index.js
+zip function.zip index.js
+aws lambda update-function-code --function-name ProcessDynamoDBRecords --zip-file fileb://function.zip
